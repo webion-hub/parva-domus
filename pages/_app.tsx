@@ -1,4 +1,6 @@
-import { Layout } from '@webion/ui-layout'
+import { Layout } from '@/components/layout/Layout'
+import { lightTheme } from '@/theme/lightTheme'
+import { ThemeProvider } from '@mui/material'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
@@ -12,9 +14,13 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <ThemeProvider
+          theme={lightTheme}
+        >
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ThemeProvider>
       </main>
     </>
 
