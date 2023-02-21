@@ -139,6 +139,8 @@ export function ParvaFooter() {
           <Link
             variant="caption"
             color="text.secondary"
+            href="/privacy"
+            target="_blank"
           >
             Privacy Policy
           </Link>
