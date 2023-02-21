@@ -1,6 +1,7 @@
 import { FacebookRounded, Instagram, LinkedIn } from "@mui/icons-material";
 import LoadingButton from '@mui/lab/LoadingButton';
 import { Button, IconButton, Link, Paper, Stack, TextField, Typography } from "@mui/material";
+import { ParvaRepository } from "../lib/ParvaRepository";
 import { BaseSectionProps, Section } from "../Section";
 
 export function ContactUsSection(props: BaseSectionProps) {
@@ -28,17 +29,19 @@ export function ContactUsSection(props: BaseSectionProps) {
           direction="column"
         >
           <Stack 
-            direction="row"
+            direction={{ xs: "column", md: "row"}}
             spacing={3}
             sx={{ marginBottom: 4 }}  
           >
             <Contact
               label="Email"
-              contact="info@parvadomussdm.it"
+              href={`mailto: ${ParvaRepository.email}`}
+              contact={ParvaRepository.email}
             />
             <Contact
               label="Telefono"
-              contact="380 1866959"
+              href={`tel: ${ParvaRepository.phone}`}
+              contact={ParvaRepository.phone}
             />
             <Stack
               direction="column"
@@ -51,13 +54,22 @@ export function ContactUsSection(props: BaseSectionProps) {
                 direction="row"
                 spacing={2}
               >
-                <IconButton>
+                <IconButton
+                  target="_blank"
+                  href={ParvaRepository.facebookLink}
+                >
                   <FacebookRounded/>
                 </IconButton>
-                <IconButton>
+                <IconButton
+                  target="_blank"
+                  href={ParvaRepository.instagramLink}
+                >
                   <Instagram/>
                 </IconButton>
-                <IconButton>
+                <IconButton
+                  target="_blank"
+                  href={ParvaRepository.linkedinLink}
+                >
                   <LinkedIn/>
                 </IconButton>
               </Stack>
@@ -76,7 +88,7 @@ export function ContactUsSection(props: BaseSectionProps) {
               }
             }}
           >
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.673166145685!2d9.262272689748812!3d45.41592989149791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786cf7fc8ea332f%3A0x56338eb108447a1c!2sVia%20Emilia%20bis%2C%2018%2C%2020097%20San%20Donato%20Milanese%20MI!5e0!3m2!1sit!2sit!4v1676976627007!5m2!1sit!2sit" loading="lazy" />
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5601.339774871886!2d9.26238!3d45.415996!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786cf7fc8eb8443%3A0xfd4b3394e1895b0f!2sParva%20Domus%20Consulenze%20E%20Gestione%20Immobili!5e0!3m2!1sit!2sit!4v1676991303420!5m2!1sit!2sit" loading="lazy" />
           </Paper>
         </Stack>
         <Stack
@@ -107,7 +119,7 @@ export function ContactUsSection(props: BaseSectionProps) {
 interface ContactProps {
   readonly label: string,
   readonly contact: string,
-  readonly onClick?: () => void
+  readonly href: string,
 }
 
 function Contact(props: ContactProps) {
@@ -121,6 +133,7 @@ function Contact(props: ContactProps) {
       </Typography>
       <Link 
         color="text.secondary"
+        href={props.href}
         sx={{
           marginBottom: 1
         }}  

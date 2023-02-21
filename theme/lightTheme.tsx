@@ -40,11 +40,6 @@ export const lightTheme = createTheme({
     appbar: 1200,
     footer: 1200
   },
-  mixins: {
-    toolbar: {
-      minHeight: 96
-    }
-  },
   typography: {
     fontFamily: [fontFamily, 'sans-serif'].join(','),
     h4: {
@@ -106,5 +101,17 @@ export const lightTheme = createTheme({
         }
       }
     },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          borderRadius: '8px !important',
+          "&::before": { display: 'none' },
+          "&.Mui-focused": {
+            borderBottomLeftRadius: '4px !important',
+            borderBottomRightRadius: '4px !important',
+          }
+        }
+      }
+    }
   }
 })

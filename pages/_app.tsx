@@ -1,6 +1,6 @@
 import { Layout } from '@/components/layout/Layout'
 import { lightTheme } from '@/theme/lightTheme'
-import { ThemeProvider } from '@mui/material'
+import { GlobalStyles, ThemeProvider } from '@mui/material'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
@@ -17,6 +17,13 @@ export default function App({ Component, pageProps }: AppProps) {
         <ThemeProvider
           theme={lightTheme}
         >
+          <GlobalStyles
+            styles={{
+              "html": {
+                scrollBehavior: 'smooth'
+              }
+            }}
+          />
           <Layout>
             <Component {...pageProps} />
           </Layout>

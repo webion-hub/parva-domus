@@ -1,5 +1,6 @@
 import { FacebookRounded, Instagram, LinkedIn } from "@mui/icons-material";
 import { Button, IconButton, Link, Stack, Typography } from "@mui/material";
+import { ParvaRepository } from "../lib/ParvaRepository";
 import { Section } from "../Section";
 
 export function ParvaFooter() {
@@ -8,7 +9,7 @@ export function ParvaFooter() {
       <Stack
         direction="column"
         sx={{
-          marginTop: 20,
+          marginTop: 12,
         }}
       >
         <Stack
@@ -23,17 +24,33 @@ export function ParvaFooter() {
               Parva Domus
             </Typography>
             <Stack spacing={1}>
-              <Typography color="text.secondary">
-                PIVA: 11696210969
-              </Typography>
-              <Link color="text.secondary">
-                Via Emilia Bis 18, San Donato Milanese MI 20097
+              <Link 
+                color="text.secondary"
+                target="_blank"
+                href={ParvaRepository.addressLink}  
+              >
+                {ParvaRepository.address}
               </Link>
               <Typography color="text.secondary">
-                PEC:&nbsp;
-                <Link color="text.secondary">
-                  parvadomussdm@pec.it
+                Email:&nbsp;
+                <Link 
+                  color="text.secondary"
+                  href={`mailto: ${ParvaRepository.email}`}
+                >
+                {ParvaRepository.email}
                 </Link>
+              </Typography>
+              <Typography color="text.secondary">
+                PEC:&nbsp;
+                <Link 
+                  color="text.secondary"
+                  href={`mailto: ${ParvaRepository.PEC}`}
+                >
+                {ParvaRepository.PEC}
+                </Link>
+              </Typography>
+              <Typography color="text.secondary">
+                PIVA: {ParvaRepository.PIVA}
               </Typography>
             </Stack>
           </Stack>
@@ -82,13 +99,22 @@ export function ParvaFooter() {
               direction="row"
               spacing={2}
             >
-              <IconButton>
+              <IconButton
+                target="_blank"
+                href={ParvaRepository.facebookLink}
+              >
                 <FacebookRounded/>
               </IconButton>
-              <IconButton>
+              <IconButton
+                target="_blank"
+                href={ParvaRepository.instagramLink}
+              >
                 <Instagram/>
               </IconButton>
-              <IconButton>
+              <IconButton
+                target="_blank"
+                href={ParvaRepository.linkedinLink}
+              >
                 <LinkedIn/>
               </IconButton>
             </Stack>

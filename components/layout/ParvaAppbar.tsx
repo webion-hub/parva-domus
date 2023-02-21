@@ -1,11 +1,33 @@
-import { AppBar, Button, Stack, Toolbar, Typography } from "@mui/material";
+import { AppBar, Button, ButtonBase, Stack, Toolbar, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 
 export function ParvaAppbar() {
+  const [fill, setFill] = useState(false)
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const handleScroll = () => {
+    const isAfterQuarterScreen = window.scrollY > window.innerHeight / 4 
+    setFill(isAfterQuarterScreen)
+  }
+
   return (
     <AppBar
       sx={{
-        background: 'transparent',
-        boxShadow: 'none',
+        transitionProperty: 'padding-top, background, box-shadow',
+        transitionDuration: '250ms',
+        borderRadius: 0,
+        paddingTop: fill ? 0 : 2,
+        background: theme => fill 
+          ? theme.palette.background.default 
+          : 'transparent',
+        boxShadow: fill 
+          ? undefined 
+          : 'none',
       }}
     >
       <Toolbar>
@@ -16,36 +38,37 @@ export function ParvaAppbar() {
           sx={{
             margin: 'auto',
             width: '100%',
-            maxWidth: theme => theme.layoutMaxWidth?.appbar
+            maxWidth: theme => theme.layoutMaxWidth?.appbar,
           }}
         >
-          <Typography variant="h4" color="text.primary">
-            Parva Domus
-          </Typography>
+          <Button href="#">
+            <Typography 
+              variant="h4" 
+              color="text.primary"
+            >
+              Parva Domus
+            </Typography>  
+          </Button>
           <Stack
             direction="row"
             spacing={4}
           >
             <Button 
-              color="info"
               href="#"  
             >
               Home
             </Button>
             <Button 
-              color="info"
               href="#who-we-are"
             >
               Chi siamo
             </Button>
             <Button 
-              color="info"
               href="#services"
             >
               Servizi
             </Button>
             <Button 
-              color="info"
               href="#faq"
             >
               FAQ
