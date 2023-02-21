@@ -14,6 +14,7 @@ specifiers:
   eslint-config-next: 13.1.6
   install: ^0.13.0
   next: 13.1.6
+  next-sitemap: ^3.1.52
   npm: ^9.5.0
   react: 18.2.0
   react-dom: 18.2.0
@@ -32,6 +33,7 @@ dependencies:
   eslint-config-next: 13.1.6_7kw3g6rralp5ps6mg3uyzz6azm
   install: 0.13.0
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
+  next-sitemap: 3.1.52_next@13.1.6
   npm: 9.5.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -91,6 +93,10 @@ packages:
       '@babel/helper-string-parser': 7.19.4
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
+    dev: false
+
+  /@corex/deepmerge/4.0.37:
+    resolution: {integrity: sha512-PX90bEnrLdxd5e6rSFWsghExMuSw0Uov3fWJuuaoFuUQIS/446diu/4seExK5b+43L+SOBbd2uBGwYUkG1JfCw==}
     dev: false
 
   /@emotion/babel-plugin/11.10.6:
@@ -2063,6 +2069,19 @@ packages:
 
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
+    dev: false
+
+  /next-sitemap/3.1.52_next@13.1.6:
+    resolution: {integrity: sha512-tY469i4QRV1PwM9BoL+HdKYBCJ83IQl3PmUNapG/Hxp0MIYIw1hINU8E+Edf5Kr8vHXfVzPqDoul/Abu2P0vkw==}
+    engines: {node: '>=14.18'}
+    hasBin: true
+    peerDependencies:
+      '@next/env': '*'
+      next: '*'
+    dependencies:
+      '@corex/deepmerge': 4.0.37
+      minimist: 1.2.8
+      next: 13.1.6_biqbaboplfbrettd7655fr4n2y
     dev: false
 
   /next/13.1.6_biqbaboplfbrettd7655fr4n2y:
