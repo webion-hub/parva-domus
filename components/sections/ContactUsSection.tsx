@@ -1,21 +1,32 @@
-import { FacebookRounded, Instagram, LinkedIn } from "@mui/icons-material";
+import { contactUsApi } from "@/pages/_app";
+import { FacebookRounded, Instagram } from "@mui/icons-material";
 import LoadingButton from '@mui/lab/LoadingButton';
-import { Button, IconButton, Link, Paper, Stack, TextField, Typography } from "@mui/material";
-import { ParvaRepository } from "../lib/ParvaRepository";
+import { IconButton, Link, Paper, Stack, TextField, Typography } from "@mui/material";
+import { ParvaRepository } from "../../lib/ParvaRepository";
 import { BaseSectionProps, Section } from "../Section";
+import { SectionTitle } from "../SectionTitle";
 
 export function ContactUsSection(props: BaseSectionProps) {
+
+  const handleSubmit = () => {
+    contactUsApi
+      .contactUs
+      .process({
+        name: 'sus',
+        email: 'matteo.budriesi@webion.it'
+      })
+  }
+
   return (
     <Section {...props}>
-      <Typography 
+      <SectionTitle 
         variant="h3" 
-        color="text.primary"
         sx={{
           marginBottom: 4
         }}
       >
         Contattaci
-      </Typography>
+      </SectionTitle>
       <Stack
         direction={{xs: "column", md: "row"}}
         spacing={8}
@@ -66,12 +77,6 @@ export function ContactUsSection(props: BaseSectionProps) {
                 >
                   <Instagram/>
                 </IconButton>
-                <IconButton
-                  target="_blank"
-                  href={ParvaRepository.linkedinLink}
-                >
-                  <LinkedIn/>
-                </IconButton>
               </Stack>
             </Stack>
           </Stack>
@@ -105,7 +110,8 @@ export function ContactUsSection(props: BaseSectionProps) {
           />
           <LoadingButton 
             variant="contained"
-            size="large"  
+            size="large"
+            onClick={handleSubmit}
           >
             Invia
           </LoadingButton>

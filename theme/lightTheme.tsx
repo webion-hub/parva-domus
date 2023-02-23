@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material";
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import * as _ from '@mui/material/styles/createPalette';
 
 interface TypeLayoutMaxWidth {
@@ -19,10 +19,10 @@ declare module '@mui/material/styles' {
 
 const fontFamily = "'Inter', sans-serif;";
 
-export const lightTheme = createTheme({
+export const lightTheme = responsiveFontSizes(createTheme({
   palette: {
     primary: {
-      main: '#3B5CEE'
+      main: '#424a94'
     },
     secondary: {
       main: '#989EA7'
@@ -115,4 +115,4 @@ export const lightTheme = createTheme({
       }
     }
   }
-})
+}))

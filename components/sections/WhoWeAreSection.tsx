@@ -1,19 +1,14 @@
 import { Paper, Stack, Typography } from "@mui/material";
 import { NextImg } from "../NextImg";
 import { BaseSectionProps, Section } from "../Section";
+import { SectionTitle } from "../SectionTitle";
 
 export function WhoWeAreSection(props: BaseSectionProps) {
   return (
     <Section {...props}>
-      <Typography 
-        variant="h4" 
-        color="text.primary"
-        sx={{
-          marginBottom: 8
-        }}
-      >
+      <SectionTitle>
         Chi siamo
-      </Typography>
+      </SectionTitle>
       <Stack
         direction={{xs: "column", md: "row"}}
         spacing={8}

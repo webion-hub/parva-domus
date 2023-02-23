@@ -1,8 +1,13 @@
 import { Layout } from '@/components/layout/Layout'
+import { ContactUsApi } from '@/lib/contactus/ContactUsApi'
 import { lightTheme } from '@/theme/lightTheme'
 import { GlobalStyles, ThemeProvider } from '@mui/material'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+
+export const contactUsApi = new ContactUsApi({
+  baseURL: 'api/contact-us'
+})
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -21,6 +26,10 @@ export default function App({ Component, pageProps }: AppProps) {
             styles={{
               "html": {
                 scrollBehavior: 'smooth'
+              },
+              "body": {
+                margin: 0,
+                overflow: 'overlay'
               }
             }}
           />

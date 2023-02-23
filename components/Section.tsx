@@ -19,7 +19,7 @@ export function Section(props: SectionProps) {
       sx={{
         maxWidth: theme => theme.layoutMaxWidth?.section,
         margin: 'auto',
-        paddingTop: 20,
+        paddingTop: { xs: 10, md: 20 },
         paddingInline: 4,
         ...props.sx
       }}

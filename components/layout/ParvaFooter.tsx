@@ -1,6 +1,7 @@
-import { FacebookRounded, Instagram, LinkedIn } from "@mui/icons-material";
+import { FacebookRounded, Instagram } from "@mui/icons-material";
 import { Button, IconButton, Link, Stack, Typography } from "@mui/material";
-import { ParvaRepository } from "../lib/ParvaRepository";
+import { ParvaRepository } from "../../lib/ParvaRepository";
+import { NextImg } from "../NextImg";
 import { Section } from "../Section";
 
 export function ParvaFooter() {
@@ -20,9 +21,22 @@ export function ParvaFooter() {
             direction="column"
             spacing={4}
           >
-            <Typography variant="h4" color="text.primary">
-              Parva Domus
-            </Typography>
+            <Button 
+              href="#"
+              sx={{ 
+                position: 'relative', 
+                maxWidth: 250 
+              }}
+            >
+              <NextImg
+                alt="logo"
+                src="/assets/images/logo.png"
+                auto={{ width: '100%', height: '56px' }}
+                sx={{ 
+                  objectFit: 'contain',
+                }}
+              /> 
+            </Button>
             <Stack spacing={1}>
               <Link 
                 color="text.secondary"
@@ -110,12 +124,6 @@ export function ParvaFooter() {
                 href={ParvaRepository.instagramLink}
               >
                 <Instagram/>
-              </IconButton>
-              <IconButton
-                target="_blank"
-                href={ParvaRepository.linkedinLink}
-              >
-                <LinkedIn/>
               </IconButton>
             </Stack>
           </Stack>

@@ -1,6 +1,6 @@
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, SwipeableDrawer } from "@mui/material"
 import { create } from "zustand"
-import { links } from "../lib/layoutLinks"
+import { links } from "../../lib/layoutLinks"
 
 interface SidebarState {
   isOpen: boolean,
