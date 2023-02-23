@@ -1,15 +1,16 @@
 import { CallRounded, MenuRounded } from "@mui/icons-material";
-import { AppBar, Button, IconButton, Stack, Toolbar, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { AppBar, Button, IconButton, Stack, Toolbar, useMediaQuery, useTheme } from "@mui/material";
 import { useEffect, useState } from "react";
-import { links } from "../lib/layoutLinks";
-import { ParvaSidebar, useSidebar } from './ParvaSidebar'
+import { links } from "../../lib/layoutLinks";
+import { NextImg } from "../NextImg";
+import { ParvaSidebar, useSidebar } from './ParvaSidebar';
 
 export function ParvaAppbar() {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'));
   const { toggle } = useSidebar()
 
-  const [fill, setFill] = useState(false)
+  const [expand, setExpand] = useState(false)
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -19,7 +20,7 @@ export function ParvaAppbar() {
 
   const handleScroll = () => {
     const isAfterQuarterScreen = window.scrollY > window.innerHeight / 4 
-    setFill(isAfterQuarterScreen)
+    setExpand(isAfterQuarterScreen)
   }
 
   const sideBarBtn = 
@@ -54,16 +55,11 @@ export function ParvaAppbar() {
     <>
       <AppBar
         sx={{
-          transitionProperty: 'padding-top, background, box-shadow',
+          transitionProperty: 'padding-block',
           transitionDuration: '250ms',
           borderRadius: 0,
-          paddingTop: fill ? 0 : 2,
-          background: theme => fill 
-            ? theme.palette.background.default 
-            : 'transparent',
-          boxShadow: fill 
-            ? undefined 
-            : 'none',
+          paddingBlock: expand ? 0 : 1,
+          background: theme => theme.palette.background.default,
         }}
       >
         <Toolbar>
@@ -77,13 +73,30 @@ export function ParvaAppbar() {
               maxWidth: theme => theme.layoutMaxWidth?.appbar,
             }}
           >
-            <Button href="#">
-              <Typography 
-                variant={isMd ? "h4" : "h5"} 
-                color="text.primary"
-              >
-                Parva Domus
-              </Typography>  
+            <Button 
+              href="#"
+              sx={{ position: 'relative' }}
+            >
+              <NextImg
+                alt="logo"
+                src={
+                  isMd 
+                    ? "/assets/images/logo.png"
+                    : "/assets/images/small-logo.png"
+                }
+                auto={{ width: '100%', height: '56px' }}
+                sx={{ 
+                  transitionProperty: 'transform',
+                  transitionDuration: '250ms',
+                  objectFit: 'cover',
+                  transform: { 
+                    xs: 'scale(0.75)', 
+                    md: expand 
+                      ? 'scale(1)' 
+                      : 'scale(1.25)' 
+                  }
+                }}
+              /> 
             </Button>
             <Stack
               direction="row"

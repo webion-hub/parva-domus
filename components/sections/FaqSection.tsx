@@ -3,6 +3,7 @@ import { Accordion, AccordionDetails, AccordionSummary, Paper, Stack, Typography
 import { NextImg } from "../NextImg";
 import { Question } from "../Question";
 import { BaseSectionProps, Section } from "../Section";
+import { SectionTitle } from "../SectionTitle";
 
 export function FaqSection(props: BaseSectionProps) {
   return (
@@ -39,16 +40,12 @@ export function FaqSection(props: BaseSectionProps) {
           />
         </Paper>
         <Stack>
-          <Typography 
+          <SectionTitle
             variant="h3" 
-            color="text.primary"
             textAlign="center"
-            sx={{
-              marginBottom: 8
-            }}
           >
             Faq
-          </Typography>
+          </SectionTitle>
           <Stack
             direction="column"
             spacing={2}

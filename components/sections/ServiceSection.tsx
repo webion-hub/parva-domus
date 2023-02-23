@@ -2,6 +2,7 @@ import { Stack, Typography } from "@mui/material";
 import { BaseSectionProps, Section } from "../Section";
 import Grid from '@mui/material/Unstable_Grid2';
 import { ServiceCard } from "../ServiceCard";
+import { SectionTitle } from "../SectionTitle";
 
 export function ServicesSection(props: BaseSectionProps) {
   return (
@@ -10,16 +11,11 @@ export function ServicesSection(props: BaseSectionProps) {
         direction="column"
         alignItems="center"
       >
-        <Typography
-          variant="h4" 
-          color="text.primary"
+        <SectionTitle
           alignItems="center"
-          sx={{
-            marginBottom: 8
-          }}
         >
           Servizi
-        </Typography>
+        </SectionTitle>
         <Grid
           container
           spacing={6}
