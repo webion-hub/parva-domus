@@ -1,36 +1,86 @@
 import axios from "axios";
+import { JWT } from 'google-auth-library';
 
-const contactUsFunction = axios.create({
-  baseURL: 'https://europe-west1-contact-us-377410.cloudfunctions.net/contact-us-function',
-})
+interface EmailAddress {
+  readonly address: string,
+  readonly name: string
+}
+interface MailRequest {
+  readonly from: EmailAddress,
+  readonly to: EmailAddress[],
+  readonly cc: EmailAddress[],
+  readonly bcc: EmailAddress[]
+}
 
-export default function handler(req: any, res: any) {
-  contactUsFunction.post('', {
-    "MailRequest": {
-      "From": {
-          "Address": "matteo.budriesi@webion.it",
-          "Name": "Davide Messori"
+interface EmailCustomer {
+  readonly email: string,
+  readonly name: string,
+}
+
+interface SendEmailRequest {
+  readonly mailRequest: MailRequest,
+  readonly apiKey: string,
+  readonly message: string,
+  readonly customer: EmailCustomer,
+  readonly bodyTemplate: string,
+  readonly subjectTemplate: string
+}
+
+export default async function handler(req: any, res: any) {
+  const {
+    name,
+    email,
+    msg,
+  } = req.body
+
+  const body: SendEmailRequest = {
+    apiKey: process.env.API_KEY ?? '',
+    bodyTemplate: process.env.BODY_TEMPLATE ?? '',
+    subjectTemplate: process.env.SUBJECT_TEMPLATE ?? '',
+    customer: {
+      email: email,
+      name: name
+    },
+    message: msg,
+    mailRequest: {
+      from: {
+        address: process.env.ADDRESS ?? '',
+        name: process.env.NAME ?? ''
       },
-      "To": [{
-          "Address": "matteo.budriesi@webion.it",
-          "Name": "Davide Messori"
+      to: [{
+        address: email,
+        name: name,
       }],
-      "Cc": [{
-          "Address": "matteo.budriesi@webion.it",
-          "Name": "Stefano Calabretti"
-      }],
-      "Bcc": []
-    },
-    "ApiKey": "wbn_rG4RKg8A_M6kYhBj6ARG4QoYDh3t7iLk7lVcdta8ESimh5ArT6MufPbHI0pWjB1pZBFK3C812",
-    "Customer": {
-        "Email": "davide.messori@webion.it",
-        "CompanyType": "SRL",
-        "Services": "Siti web",
-        "Name": "Davido"
-    },
-    "Message": "test",
-    "BodyTemplate": "webion.it.contactus.body",
-    "SubjectTemplate": "webion.it.contactus.sub"
+      cc: [],
+      bcc: []
+    }
+  }
+
+  try {
+    const contactUsApi = await getContactUsApi();
+    const response = await contactUsApi.post('', body);
+    res
+      .status(response.status)
+      .end()
+  }
+  catch {
+    res
+      .status(500)
+      .end()
+  }
+}
+
+async function getContactUsApi() {
+  const jwt = new JWT({
+    email: process.env.JWT_EMAIL,
+    key: process.env.JWT_KEY
   })
-  .then(r => res.status(200).json(r))
+
+  const token = await jwt.fetchIdToken(process.env.TARGET_AUDIENCE ?? '')
+  return axios.create({
+      baseURL: process.env.CONTACT_US_BASE_URL,
+      headers: {
+        Authorization: `Bearer ${token}` 
+      }
+    })
 }
