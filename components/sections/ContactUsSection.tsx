@@ -1,20 +1,84 @@
+import { EmailBody } from "@/lib/contactus/endpoints/ContactUsEndpoint";
 import { contactUsApi } from "@/pages/_app";
 import { FacebookRounded, Instagram } from "@mui/icons-material";
 import LoadingButton from '@mui/lab/LoadingButton';
-import { IconButton, Link, Paper, Stack, TextField, Typography } from "@mui/material";
+import { Alert, IconButton, Link, Paper, Snackbar, Stack, TextField, Typography } from "@mui/material";
+import { ChangeEvent, useState } from "react";
 import { ParvaRepository } from "../../lib/ParvaRepository";
 import { BaseSectionProps, Section } from "../Section";
 import { SectionTitle } from "../SectionTitle";
 
-export function ContactUsSection(props: BaseSectionProps) {
+interface ValueStatus<T> {
+  readonly value: T,
+  readonly error: boolean,
+}
 
-  const handleSubmit = () => {
+type EmailStatus<T> = {
+  [key in keyof T]:  ValueStatus<T[key]>
+} 
+
+const defaultValue: EmailStatus<EmailBody> = {
+  email: { value: '', error: false },
+  msg: { value: '', error: false },
+  name: { value: '', error: false },
+}
+
+export function ContactUsSection(props: BaseSectionProps) {
+  const [status, setStatus] = useState<'none' | 'loading' | 'error' | 'success'>('none')
+  const [email, setEmail] = useState<EmailStatus<EmailBody>>(defaultValue)
+
+  const emailValueArr = Object.entries(email).map(e => [e[0], e[1].value])
+  const emailValue = Object.fromEntries(emailValueArr)
+
+  const handleChange = (key: keyof EmailBody) => (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setEmail({
+      ...email,
+      [key]: {
+        value: e.target.value,
+        error: false
+      },
+    })
+  }
+  
+  const handleSubmit = (e: any) => {
+    e.preventDefault()
+    
+    const areErrors = checkErrors() 
+    if(areErrors)
+      return;
+
+    setStatus('loading')
     contactUsApi
       .contactUs
-      .process({
-        name: 'sus',
-        email: 'matteo.budriesi@webion.it'
-      })
+      .process(emailValue)
+      .then(() => handleStatus('success'))
+      .catch(() => handleStatus('error'))
+  }
+
+  const handleStatus = (status: 'success' | 'error') => {
+    setStatus(status)
+    setEmail(defaultValue)
+  }
+
+  const checkErrors = () => {
+    const isNameOk = email.name.value.length > 0;
+    const isEmailOk = !!email
+      .email
+      .value
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+
+    const isMsgOk = email.msg.value.length > 0;
+
+    setEmail({
+      email: { value: email.email.value, error: !isEmailOk },
+      name: { value: email.name.value, error: !isNameOk },
+      msg: { value: email.msg.value, error: !isMsgOk },
+    })
+
+    return !(isNameOk && isEmailOk && isMsgOk)
   }
 
   return (
@@ -97,24 +161,68 @@ export function ContactUsSection(props: BaseSectionProps) {
           </Paper>
         </Stack>
         <Stack
+          component="form"
           direction="column"
           spacing={4}
+          onSubmit={handleSubmit}
         >
-          <TextField label="Nome" variant="filled"/>
-          <TextField label="Email" variant="filled"/>
-          <TextField 
+          <TextField
+            required
+            label="Nome" 
+            variant="filled"
+            error={email.name.error}
+            value={email.name.value}
+            disabled={status === "loading"}
+            onChange={handleChange('name')}
+          />
+          <TextField
+            required
+            label="Email" 
+            variant="filled"
+            error={email.email.error}
+            value={email.email.value}
+            disabled={status === "loading"}
+            onChange={handleChange('email')}
+          />
+          <TextField
+            required
             label="Messaggio" 
             variant="filled"
             multiline
-            rows={8}  
+            rows={8}
+            error={email.msg.error}
+            value={email.msg.value}
+            disabled={status === "loading"}
+            onChange={handleChange('msg')}
           />
-          <LoadingButton 
+          <LoadingButton
+            loading={status === 'loading'}
+            type="submit"
             variant="contained"
             size="large"
             onClick={handleSubmit}
           >
             Invia
           </LoadingButton>
+          <Snackbar
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+            open={status === 'success' || status === "error"}
+            onClose={() => setStatus('none')}
+            autoHideDuration={4000}
+            message="Messaggio inviato!"
+          >
+            <Alert
+              onClose={() => setStatus('none')}
+              severity={status === "success" ? "success" : "error"} 
+              sx={{ width: '100%' }}
+            >
+              { 
+                status === "success"
+                  ? "Messaggio inviato!"
+                  :  "C'è stato un errore!"
+              }
+            </Alert>
+          </Snackbar>
         </Stack>
       </Stack>
     </Section>
