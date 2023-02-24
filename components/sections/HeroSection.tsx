@@ -40,7 +40,7 @@ export function HeroSection(props: BaseSectionProps) {
             bottom: 64,
             background: theme => theme.palette.background.default,
             maxWidth: 550,
-            padding: { xs: 2, md: 6 },
+            padding: { xs: 2, md: 4 },
             boxShadow: '10px 10px 20px 0px #00000038',
           }}
         >
