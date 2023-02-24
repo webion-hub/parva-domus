@@ -71,7 +71,6 @@ export const lightTheme = responsiveFontSizes(createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          fontSize: 18,
           borderRadius: 11,
           textTransform: 'capitalize',
         },

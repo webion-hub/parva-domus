@@ -1,9 +1,12 @@
 import { BaseSectionProps, Section } from "@/components/Section";
-import { alpha, Button, Paper, Stack, styled, Typography } from "@mui/material";
+import { Button, Paper, Stack, styled, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 const Video = styled('video')({})
 
 export function HeroSection(props: BaseSectionProps) {
+  const theme = useTheme();
+  const isSmall = useMediaQuery(theme.breakpoints.down(330));
+  
   return (
     <Stack
       sx={{ 
@@ -20,6 +23,7 @@ export function HeroSection(props: BaseSectionProps) {
         {...props}
         sx={{ 
           zIndex: 1,
+          position: 'relative',
           boxSizing: 'border-box',
           height: '100%',
           width: '100%'
@@ -29,21 +33,21 @@ export function HeroSection(props: BaseSectionProps) {
           component={Paper}
           direction="column"
           spacing={4}
-          sx={{ 
-            background: theme => ({
-              xs: alpha('#000', 0.2),
-              md: alpha(theme.palette.background.default, 0.2),
-            }),
+          sx={{
+            position: { xs: 'absolute !important', sm: 'relative !important' },
+            left: { xs: 32, sm: 0 },
+            right: { xs: 32, sm: 0 },
+            bottom: 64,
+            background: theme => theme.palette.background.default,
             maxWidth: 550,
-            padding: { xs: 4, md: 6 },
+            padding: { xs: 2, md: 6 },
             boxShadow: '10px 10px 20px 0px #00000038',
-            backdropFilter: { xs: undefined, md: 'blur(16px)'}
           }}
         >
           <Typography
-            variant="h2"
+            variant={isSmall ? "h4" : "h2"}
             component="h1"
-            color="#fff"
+            color="#000000cc"
           >
             <b>
               Immobiliare Parva
@@ -52,19 +56,19 @@ export function HeroSection(props: BaseSectionProps) {
             </b>
           </Typography>
           <Typography
-            variant="body1"
-            color="#fff"
+            color="#000000bb"
           >
             L&apos; Agenzia Parva Domus è un agenzia ormai radicata nel territorio in grado di garantire, ai propri clienti, siano essi venditori che acquirenti, un altissimo grado di eccellenza nei servizi
           </Typography>
           <Button
             href="#contact-us"
             variant="contained"
+            size="large"
             sx={{ 
               textTransform: "none"
             }}
           >
-            Ottieni una consulenza
+            Contattaci
           </Button>
         </Stack>
       </Section>
@@ -74,7 +78,7 @@ export function HeroSection(props: BaseSectionProps) {
         autoPlay
         muted
         sx={{
-          height: '100%',
+          height: { xs: '80%', md: '100%'},
           width: '100%',
           position: 'absolute',
           objectFit: 'cover'
