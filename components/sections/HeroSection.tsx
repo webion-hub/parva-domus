@@ -45,7 +45,7 @@ export function HeroSection(props: BaseSectionProps) {
           }}
         >
           <Typography
-            variant={isSmall ? "h4" : "h2"}
+            variant={isSmall ? "h4" : "h3"}
             component="h1"
             color="#000000cc"
           >
