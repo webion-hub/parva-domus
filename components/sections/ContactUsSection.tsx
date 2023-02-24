@@ -5,6 +5,7 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import { Alert, Checkbox, FormControlLabel, IconButton, Link, Paper, Snackbar, Stack, TextField, Typography } from "@mui/material";
 import { ChangeEvent, useState } from "react";
 import { ParvaRepository } from "../../lib/ParvaRepository";
+import { Contact } from "../Contact";
 import { BaseSectionProps, Section } from "../Section";
 import { SectionTitle } from "../SectionTitle";
 
@@ -247,34 +248,5 @@ export function ContactUsSection(props: BaseSectionProps) {
         </Stack>
       </Stack>
     </Section>
-  )
-}
-
-
-interface ContactProps {
-  readonly label: string,
-  readonly contact: string,
-  readonly href: string,
-}
-
-function Contact(props: ContactProps) {
-  return (
-    <Stack 
-      direction="column"
-      justifyContent="space-between"
-    >
-      <Typography>
-        {props.label}
-      </Typography>
-      <Link 
-        color="text.secondary"
-        href={props.href}
-        sx={{
-          marginBottom: 1
-        }}  
-      >
-        {props.contact}
-      </Link>
-    </Stack>
   )
 }
