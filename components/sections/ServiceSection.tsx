@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material";
+import { Link, Stack, Typography } from "@mui/material";
 import { BaseSectionProps, Section } from "../Section";
 import Grid from '@mui/material/Unstable_Grid2';
 import { ServiceCard } from "../ServiceCard";
@@ -24,37 +24,48 @@ export function ServicesSection(props: BaseSectionProps) {
           <Grid xs={1}>
             <ServiceCard
               title="Affitti"
-              description="Gestione locazioni e controllo documentale inquilini"
+              description="Gestione locazioni. Ci occupiamo della gestione burocratica pre-contrattuale (Controlli documentazione clienti e loro solvibilità) e pratiche post-contrattuali (rinnovi e chiusure contrattuali)."
             />
           </Grid>
           <Grid xs={1}>
             <ServiceCard
               title="Vendite"
-              description="Acquista in tutta sicurezza la tua casa con uno sconto fino al 50%"
+              description="Assistenza e ricerca all'acquisto di immobili residenziali, commerciali, capannoni e terreni."
             />
           </Grid>
           <Grid xs={1}>
             <ServiceCard
               title="Gestione affitti brevi"
-              description="Tipologia di locazioni molto richiesta soprattutto in zone di interesse quali, poli lavorativi o il Centro Ospedaliero San Donato"
+              description="Tipologia di locazioni molto richiesta soprattutto in zone di interesse quali, poli lavorativi o il Centro Ospedaliero San Donato."
             />
           </Grid>
           <Grid xs={1}>
             <ServiceCard
               title="Ristrutturazioni"
-              description="Nome società a cui ci appoggiamo"
+              description="Consolidata partnership con C.L.R IMPIANTI DI GERACE CRISTIAN, con artigiani che operano nel settore da decenni."
             />
           </Grid>
           <Grid xs={1}>
             <ServiceCard
               title="Consulenza mutuo"
-              description="Descrizione del nostro partner creditizio e del consulente con cui collaboriamo"
+              description={
+                <>
+                  Offriamo ai nostri clienti la migliore consulenza in materia creditizia.
+                  <br/>
+                  <Link 
+                    href="https://www.credipass.it/consulenti/milano-giovanni-grieco/" 
+                    target="_blank"
+                  >
+                    Credipass
+                  </Link>
+                </>
+              }
             />
           </Grid>
           <Grid xs={1}>
             <ServiceCard
               title="Gestione utenze luce e gas"
-              description="Essendo corner store UNOENERGY andremo ad inserire queste informazioni"
+              description="Come corner ufficiali Unoenergy, siamo al tuo fianco e lavoriamo per rendere le tue utenze più efficienti."
             />
           </Grid>
         </Grid>

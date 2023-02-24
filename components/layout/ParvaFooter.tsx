@@ -1,3 +1,5 @@
+import { links } from "@/lib/layoutLinks";
+import { useNextNavigator } from "@/lib/useNextNavigator";
 import { FacebookRounded, Instagram } from "@mui/icons-material";
 import { Button, IconButton, Link, Stack, Typography } from "@mui/material";
 import { ParvaRepository } from "../../lib/ParvaRepository";
@@ -5,6 +7,8 @@ import { NextImg } from "../NextImg";
 import { Section } from "../Section";
 
 export function ParvaFooter() {
+  const { clickNavigate } = useNextNavigator()
+
   return (
     <Section>
       <Stack
@@ -78,33 +82,22 @@ export function ParvaFooter() {
               direction="row"
               flexWrap="wrap"
             >
+              {
+                links.map((link, index) => (
+                  <Button
+                    key={index}
+                    color="secondary"
+                    href={link.href}
+                    onClick={clickNavigate(link.href)}
+                  >
+                    {link.label}
+                  </Button>
+                ))
+              }
               <Button 
                 color="secondary"
-                href="#"  
-              >
-                Home
-              </Button>
-              <Button 
-                color="secondary"
-                href="#who-we-are"  
-              >
-                Chi siamo
-              </Button>
-              <Button 
-                color="secondary"
-                href="#services" 
-              >
-                Servizi
-              </Button>
-              <Button 
-                color="secondary"
-                href="#faq" 
-              >
-                FAQ
-              </Button>
-              <Button 
-                color="secondary"
-                href="#contact-us" 
+                href="/#contact-us"
+                onClick={clickNavigate('/#contact-us')}
               >
                 Contattaci
               </Button>

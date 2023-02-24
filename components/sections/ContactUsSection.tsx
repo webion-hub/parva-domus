@@ -2,7 +2,7 @@ import { EmailBody } from "@/lib/contactus/endpoints/ContactUsEndpoint";
 import { contactUsApi } from "@/pages/_app";
 import { FacebookRounded, Instagram } from "@mui/icons-material";
 import LoadingButton from '@mui/lab/LoadingButton';
-import { Alert, IconButton, Link, Paper, Snackbar, Stack, TextField, Typography } from "@mui/material";
+import { Alert, Checkbox, FormControlLabel, IconButton, Link, Paper, Snackbar, Stack, TextField, Typography } from "@mui/material";
 import { ChangeEvent, useState } from "react";
 import { ParvaRepository } from "../../lib/ParvaRepository";
 import { BaseSectionProps, Section } from "../Section";
@@ -24,6 +24,7 @@ const defaultValue: EmailStatus<EmailBody> = {
 }
 
 export function ContactUsSection(props: BaseSectionProps) {
+  const [privacy, setPrivacy] = useState(true)
   const [status, setStatus] = useState<'none' | 'loading' | 'error' | 'success'>('none')
   const [email, setEmail] = useState<EmailStatus<EmailBody>>(defaultValue)
 
@@ -195,12 +196,32 @@ export function ContactUsSection(props: BaseSectionProps) {
             disabled={status === "loading"}
             onChange={handleChange('msg')}
           />
+          <FormControlLabel
+            control={
+              <Checkbox
+                onChange={() => setPrivacy(!privacy)} 
+                checked={privacy}
+              />
+            } 
+            label={
+              <Typography variant="body2">
+                Ho preso visione dell&apos;
+                <Link
+                  href="/privacy"
+                  target="_blank"
+                >
+                  Informativa sulla privacy
+                </Link>
+              </Typography>
+            } 
+          />
           <LoadingButton
             loading={status === 'loading'}
             type="submit"
             variant="contained"
             size="large"
             onClick={handleSubmit}
+            disabled={!privacy}
           >
             Invia
           </LoadingButton>
