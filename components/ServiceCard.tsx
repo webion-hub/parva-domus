@@ -1,9 +1,9 @@
 import { Box, Paper, Stack, Typography } from "@mui/material";
-import { useRef, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 
 interface ServiceCardProps {
   readonly title: string;
-  readonly description: string;
+  readonly description: string | ReactNode;
 }
 
 export function ServiceCard(props: ServiceCardProps) {
@@ -11,7 +11,7 @@ export function ServiceCard(props: ServiceCardProps) {
     <Paper
       sx={{
         padding: 4,
-        minHeight: 200,
+        minHeight: 260,
       }}
     >
       <Stack
