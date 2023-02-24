@@ -1,3 +1,4 @@
+import { useNextNavigator } from "@/lib/useNextNavigator";
 import { CallRounded, MenuRounded } from "@mui/icons-material";
 import { AppBar, Button, IconButton, Stack, Toolbar, useMediaQuery, useTheme } from "@mui/material";
 import { useEffect, useState } from "react";
@@ -9,6 +10,7 @@ export function ParvaAppbar() {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'));
   const { toggle } = useSidebar()
+  const { clickNavigate } = useNextNavigator()
 
   const [expand, setExpand] = useState(false)
 
@@ -33,8 +35,9 @@ export function ParvaAppbar() {
 
   const smallContactUsBtn = 
     <IconButton
-      href="#contact-us"
       color="primary"
+      href="#contact-us"
+      onClick={clickNavigate('/#contact-us')}
     >
       <CallRounded/>
     </IconButton>
@@ -42,7 +45,8 @@ export function ParvaAppbar() {
   const bigContactUsBtn =   
     <Button 
       variant="contained"
-      href="#contact-us"
+      href="/#contact-us"
+      onClick={clickNavigate('/#contact-us')}
     >
       Contattaci
     </Button>
@@ -55,10 +59,11 @@ export function ParvaAppbar() {
     <>
       <AppBar
         sx={{
-          transitionProperty: 'padding-block',
+          transitionProperty: 'padding',
           transitionDuration: '250ms',
           borderRadius: 0,
-          paddingBlock: expand ? 0 : 1,
+          padding: expand ? 0 : 1,
+          paddingInline: 0,
           background: theme => theme.palette.background.default,
         }}
       >
@@ -74,8 +79,11 @@ export function ParvaAppbar() {
             }}
           >
             <Button 
-              href="#"
-              sx={{ position: 'relative' }}
+              href="/#"
+              onClick={clickNavigate('/#')}
+              sx={{ 
+                position: 'relative',
+              }}
             >
               <NextImg
                 alt="logo"
@@ -84,7 +92,7 @@ export function ParvaAppbar() {
                     ? "/assets/images/logo.png"
                     : "/assets/images/small-logo.png"
                 }
-                auto={{ width: '100%', height: '56px' }}
+                auto={{ width: 'auto', height: '56px' }}
                 sx={{ 
                   transitionProperty: 'transform',
                   transitionDuration: '250ms',
@@ -109,7 +117,8 @@ export function ParvaAppbar() {
                     links.map((link, index) => (
                       <Button
                         key={index}
-                        href={link.href} 
+                        href={link.href}
+                        onClick={clickNavigate(link.href)}
                       >
                         {link.label}
                       </Button>

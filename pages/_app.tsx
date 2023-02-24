@@ -1,3 +1,4 @@
+import { CookiePopup } from '@/components/CookiePopup'
 import { Layout } from '@/components/layout/Layout'
 import { ContactUsApi } from '@/lib/contactus/ContactUsApi'
 import { lightTheme } from '@/theme/lightTheme'
@@ -35,6 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
           />
           <Layout>
             <Component {...pageProps} />
+            <CookiePopup/>
           </Layout>
         </ThemeProvider>
       </main>

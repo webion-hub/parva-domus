@@ -1,3 +1,4 @@
+import { useNextNavigator } from "@/lib/useNextNavigator"
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, SwipeableDrawer } from "@mui/material"
 import { create } from "zustand"
 import { links } from "../../lib/layoutLinks"
@@ -18,6 +19,7 @@ export const useSidebar = create<SidebarState>((set) => ({
 
 export function ParvaSidebar() {
   const { close, open, isOpen } = useSidebar()
+  const { clickNavigate } = useNextNavigator()
 
   return (
     <SwipeableDrawer
@@ -35,7 +37,10 @@ export function ParvaSidebar() {
           >
             <ListItemButton
               href={link.href}
-              onClick={close}
+              onClick={(e) => {
+                clickNavigate(link.href)(e)
+                close()
+              }}
             >
               <ListItemIcon>
                 {link.icon}

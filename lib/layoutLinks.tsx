@@ -4,21 +4,21 @@ export const links = [
   {
     label: 'Home',
     icon: <HomeRounded/>,
-    href: '#',
+    href: '/#',
   },
   {
     label: 'Chi siamo',
     icon: <BusinessRounded/>,
-    href: '#who-we-are',
+    href: '/#who-we-are',
   },
   {
     label: 'Servizi',
     icon: <HomeRepairService/>,
-    href: '#services',
+    href: '/#services',
   },
   {
     label: 'FAQ',
     icon: <QuizRounded/>,
-    href: '#faq',
+    href: '/#faq',
   }
 ]

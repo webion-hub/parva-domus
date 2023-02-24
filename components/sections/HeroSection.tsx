@@ -69,6 +69,7 @@ export function HeroSection(props: BaseSectionProps) {
       </Section>
       <Video 
         loop 
+        playsInline
         autoPlay
         muted
         sx={{
