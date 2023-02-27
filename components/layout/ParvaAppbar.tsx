@@ -1,5 +1,6 @@
 import { useNextNavigator } from "@/lib/useNextNavigator";
-import { CallRounded, MenuRounded } from "@mui/icons-material";
+import MenuRounded from "@mui/icons-material/MenuRounded";
+import CallRounded from "@mui/icons-material/CallRounded";
 import { AppBar, Button, IconButton, Stack, Toolbar, useMediaQuery, useTheme } from "@mui/material";
 import { useEffect, useState } from "react";
 import { links } from "../../lib/layoutLinks";

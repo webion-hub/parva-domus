@@ -1,5 +1,4 @@
-import { ExpandMoreRounded } from "@mui/icons-material";
-import { Accordion, AccordionDetails, AccordionSummary, Paper, Stack, Typography } from "@mui/material";
+import { Paper, Stack } from "@mui/material";
 import { NextImg } from "../NextImg";
 import { Question } from "../Question";
 import { BaseSectionProps, Section } from "../Section";
