@@ -20,13 +20,12 @@ export function Question(props: QuestionProps) {
         expandIcon={<ExpandMoreRounded color="primary"/>}
       >
         <Typography color="text.primary">
-          <b>Accordion 1</b>
+          <b>{props.title}</b>
         </Typography>
       </AccordionSummary>
       <AccordionDetails>
         <Typography color="text.secondary">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
+          {props.description}
         </Typography>
       </AccordionDetails>
     </Accordion>

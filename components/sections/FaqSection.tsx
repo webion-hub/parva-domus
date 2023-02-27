@@ -52,20 +52,21 @@ export function FaqSection(props: BaseSectionProps) {
           >
             <Question 
               defaultExpanded
-              title="Viverra leo vitae, volutpat libero."
-              description="Quisque rutrum. Aenean imperdi. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget."
+              title="Quali spese, tasse e oneri si pagano quando si vende o si acquista un immobile?"
+              description="L’acquirente deve sostenere le spese notarili; la tassazione prima o seconda casa, che viene calcolata sulla rendita catastale, se si parla di immobile residenziale; 
+              Il venditore deve sostenere la redazione della Relazione Tecnica integrata; eventuali sanatorie, nel caso risultino abusi all’interno dell’immobile; la predisposizione dell’Attestato di Prestazione Energetica."
             />
             <Question 
-              title="Viverra leo vitae, volutpat libero."
-              description="Quisque rutrum. Aenean imperdi. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget."
+              title="Posso richiedere un mutuo per acquistare un immobile all'asta?"
+              description="Certamente, i 120 giorni successivi all'aggiudicazione, ci permetteranno di assistere il cliente per tutte le pratiche e le richieste dell'ente creditizio."
             />
             <Question 
-              title="Viverra leo vitae, volutpat libero."
-              description="Quisque rutrum. Aenean imperdi. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget."
+              title="Quali garanzie ha il proprietario che concede in locazione un immobile?"
+              description="Prima di consegnare le chiavi dell’alloggio, il proprietario di casa richiede generalmente la consegna di una somma di denaro, il deposito cauzione, che potrà essere usata per coprire eventuali danni causati dall’inquilino. La cauzione viene affidata in deposito e matura degli interessi, che spettano di diritto agli inquilini."
             />
             <Question
-              title="Viverra leo vitae, volutpat libero."
-              description="Quisque rutrum. Aenean imperdi. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget."
+              title="Quanto vale il mio immobile al metro quadro?"
+              description="Potete richiedere una valutazione della proprietà da parte dei nostri agenti immobiliari, che nella loro stima terranno conto di tutte le caratteristiche e delle particolarità dell'immobile. A tal fine, basta contattarci online. Noi vi risponderemo celermente a breve proponendovi una data. I servizi, sono gratuiti e senza impegno per voi."
             />
           </Stack>
         </Stack>
