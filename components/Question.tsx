@@ -1,9 +1,10 @@
 import ExpandMoreRounded from "@mui/icons-material/ExpandMoreRounded";
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
+import { ReactNode } from "react";
 
 interface QuestionProps {
   readonly title: string;
-  readonly description: string;
+  readonly description: string | ReactNode;
   readonly defaultExpanded?: boolean; 
 }
 
