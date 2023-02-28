@@ -1,4 +1,7 @@
-import { BusinessRounded, HomeRepairService, HomeRounded, QuizRounded } from "@mui/icons-material";
+import QuizRounded from "@mui/icons-material/QuizRounded";
+import HomeRounded from "@mui/icons-material/HomeRounded";
+import HomeRepairService from "@mui/icons-material/HomeRepairService";
+import BusinessRounded from "@mui/icons-material/BusinessRounded";
 
 export const links = [
   {

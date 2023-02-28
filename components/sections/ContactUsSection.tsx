@@ -1,6 +1,7 @@
 import { EmailBody } from "@/lib/contactus/endpoints/ContactUsEndpoint";
 import { contactUsApi } from "@/pages/_app";
-import { FacebookRounded, Instagram } from "@mui/icons-material";
+import FacebookRounded from "@mui/icons-material/FacebookRounded";
+import Instagram from "@mui/icons-material/Instagram";
 import LoadingButton from '@mui/lab/LoadingButton';
 import { Alert, Checkbox, FormControlLabel, IconButton, Link, Paper, Snackbar, Stack, TextField, Typography } from "@mui/material";
 import { ChangeEvent, useState } from "react";

@@ -1,6 +1,7 @@
 import { links } from "@/lib/layoutLinks";
 import { useNextNavigator } from "@/lib/useNextNavigator";
-import { FacebookRounded, Instagram } from "@mui/icons-material";
+import FacebookRounded from "@mui/icons-material/FacebookRounded";
+import Instagram from "@mui/icons-material/Instagram";
 import { Button, IconButton, Link, Stack, Typography } from "@mui/material";
 import { ParvaRepository } from "../../lib/ParvaRepository";
 import { NextImg } from "../NextImg";
