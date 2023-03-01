@@ -67,11 +67,7 @@ export function HeroSection(props: BaseSectionProps) {
           <Typography
             color="textPrimary"
           >
-<<<<<<< HEAD
             L&apos; Agenzia Parva Domus è un&apos;agenzia ormai radicata nel territorio in grado di garantire, ai propri clienti, siano essi venditori che acquirenti, un altissimo grado di eccellenza nei servizi.
-=======
-            L&apos; Agenzia Parva Domus è un'agenzia ormai radicata nel territorio in grado di garantire, ai propri clienti, siano essi venditori che acquirenti, un altissimo grado di eccellenza nei servizi.
->>>>>>> main
           </Typography>
           <Box>
             <Button
