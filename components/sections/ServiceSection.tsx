@@ -117,15 +117,15 @@ export function ServicesSection(props: BaseSectionProps) {
         </Grid>
         <Grid xs={1}>
           <NextImg
-            src="/assets/images/service-2.png"
-            alt="service-2"
+            src="/assets/images/service-3.png"
+            alt="service-3"
             fill
           />
         </Grid>
         <Grid xs={1}>
           <NextImg
-            src="/assets/images/service-3.png"
-            alt="service-3"
+            src="/assets/images/service-2.png"
+            alt="service-2"
             fill
           />
         </Grid>

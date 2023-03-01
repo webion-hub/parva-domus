@@ -24,8 +24,8 @@ export function HeroSection(props: BaseSectionProps) {
           height: '100%',
           position: 'absolute',
           background: {
-            xs: 'linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(198,201,223,0.75) 50%, rgba(66,74,148,0.7) 100%)',
-            sm: 'linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(198,201,223,0.75) 50%, rgba(66,74,148,0.7) 100%)'
+            xs: 'linear-gradient(0deg, rgba(255,255,255,0.6) 0%, rgba(198,201,223,0.55) 50%, rgba(66,74,148,0.5) 100%)',
+            sm: 'linear-gradient(90deg, rgba(255,255,255,0.6) 0%, rgba(198,201,223,0.55) 50%, rgba(66,74,148,0.5) 100%)'
           },
           zIndex: 1,
         }
@@ -67,7 +67,7 @@ export function HeroSection(props: BaseSectionProps) {
           <Typography
             color="textPrimary"
           >
-            L&apos; Agenzia Parva Domus è un agenzia ormai radicata nel territorio in grado di garantire, ai propri clienti, siano essi venditori che acquirenti, un altissimo grado di eccellenza nei servizi.
+            L&apos; Agenzia Parva Domus è un'agenzia ormai radicata nel territorio in grado di garantire, ai propri clienti, siano essi venditori che acquirenti, un altissimo grado di eccellenza nei servizi.
           </Typography>
           <Box>
             <Button
