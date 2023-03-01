@@ -44,11 +44,11 @@ export default async function handler(req: any, res: any) {
     message: msg,
     mailRequest: {
       from: {
-        address: process.env.ADDRESS ?? '',
+        address: email,
         name: process.env.NAME ?? ''
       },
       to: [{
-        address: email,
+        address: process.env.ADDRESS ?? '',
         name: name,
       }],
       cc: [],

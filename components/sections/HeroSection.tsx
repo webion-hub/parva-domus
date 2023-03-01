@@ -11,9 +11,9 @@ export function HeroSection(props: BaseSectionProps) {
     <Stack
       sx={{ 
         marginTop: 10,
-        minHeight: 700,
+        minHeight: 550,
         maxHeight: 1000,
-        height: '90vh',
+        height: theme => `calc(90vh - ${theme.spacing(10)})`,
         width: '100vw',
         overflow: 'hidden',
         position: 'relative'
@@ -37,7 +37,7 @@ export function HeroSection(props: BaseSectionProps) {
             position: { xs: 'absolute !important', sm: 'relative !important' },
             left: { xs: 32, sm: 0 },
             right: { xs: 32, sm: 0 },
-            bottom: 64,
+            bottom: 32,
             background: theme => theme.palette.background.default,
             maxWidth: 550,
             padding: { xs: 2, md: 3 },
