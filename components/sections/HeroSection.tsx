@@ -40,7 +40,7 @@ export function HeroSection(props: BaseSectionProps) {
             bottom: 64,
             background: theme => theme.palette.background.default,
             maxWidth: 550,
-            padding: { xs: 2, md: 4 },
+            padding: { xs: 2, md: 3 },
             boxShadow: '10px 10px 20px 0px #00000038',
           }}
         >
@@ -56,14 +56,13 @@ export function HeroSection(props: BaseSectionProps) {
             </b>
           </Typography>
           <Typography
-            color="#000000bb"
+            color="textSecondary"
           >
-            L&apos; Agenzia Parva Domus è un agenzia ormai radicata nel territorio in grado di garantire, ai propri clienti, siano essi venditori che acquirenti, un altissimo grado di eccellenza nei servizi
+            L&apos; Agenzia Parva Domus è un agenzia ormai radicata nel territorio in grado di garantire, ai propri clienti, siano essi venditori che acquirenti, un altissimo grado di eccellenza nei servizi.
           </Typography>
           <Button
             href="#contact-us"
             variant="contained"
-            size="large"
             sx={{ 
               textTransform: "none"
             }}

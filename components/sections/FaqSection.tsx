@@ -52,8 +52,15 @@ export function FaqSection(props: BaseSectionProps) {
             <Question 
               defaultExpanded
               title="Quali spese, tasse e oneri si pagano quando si vende o si acquista un immobile?"
-              description="L’acquirente deve sostenere le spese notarili; la tassazione prima o seconda casa, che viene calcolata sulla rendita catastale, se si parla di immobile residenziale; 
-              Il venditore deve sostenere la redazione della Relazione Tecnica integrata; eventuali sanatorie, nel caso risultino abusi all’interno dell’immobile; la predisposizione dell’Attestato di Prestazione Energetica."
+              description={<>
+                L’acquirente deve sostenere:
+                <ul>
+                  <li>Le spese notarili;</li>
+                  <li>La tassazione prima o seconda casa, che viene calcolata sulla rendita catastale, se si parla di immobile residenziale;</li> 
+                  <li>Il venditore deve sostenere la redazione della Relazione Tecnica integrata; eventuali sanatorie, nel caso risultino abusi all’interno dell’immobile;</li>
+                  <li>La predisposizione dell’Attestato di Prestazione Energetica</li>
+                </ul>
+              </>}
             />
             <Question 
               title="Posso richiedere un mutuo per acquistare un immobile all'asta?"
