@@ -1,5 +1,6 @@
 import { BaseSectionProps, Section } from "@/components/Section";
-import { Button, Paper, Stack, styled, Typography, useMediaQuery, useTheme } from "@mui/material";
+import PhoneRounded from "@mui/icons-material/PhoneRounded";
+import { Box, Button, Paper, Stack, styled, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 const Video = styled('video')({})
 
@@ -12,11 +13,22 @@ export function HeroSection(props: BaseSectionProps) {
       sx={{ 
         marginTop: 10,
         minHeight: 550,
-        maxHeight: 1000,
+        maxHeight: 900,
         height: theme => `calc(90vh - ${theme.spacing(10)})`,
         width: '100vw',
         overflow: 'hidden',
-        position: 'relative'
+        position: 'relative',
+        "&::before": {
+          content: "''",
+          width: '100%',
+          height: '100%',
+          position: 'absolute',
+          background: {
+            xs: 'linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(198,201,223,0.75) 50%, rgba(66,74,148,0.7) 100%)',
+            sm: 'linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(198,201,223,0.75) 50%, rgba(66,74,148,0.7) 100%)'
+          },
+          zIndex: 1,
+        }
       }}
     >
       <Section
@@ -30,7 +42,6 @@ export function HeroSection(props: BaseSectionProps) {
         }}
       >
         <Stack
-          component={Paper}
           direction="column"
           spacing={4}
           sx={{
@@ -38,16 +49,14 @@ export function HeroSection(props: BaseSectionProps) {
             left: { xs: 32, sm: 0 },
             right: { xs: 32, sm: 0 },
             bottom: 32,
-            background: theme => theme.palette.background.default,
             maxWidth: 550,
             padding: { xs: 2, md: 3 },
-            boxShadow: '10px 10px 20px 0px #00000038',
           }}
         >
           <Typography
             variant={isSmall ? "h4" : "h3"}
             component="h1"
-            color="#000000cc"
+            color="textPrimary"
           >
             <b>
               Immobiliare Parva
@@ -56,19 +65,23 @@ export function HeroSection(props: BaseSectionProps) {
             </b>
           </Typography>
           <Typography
-            color="textSecondary"
+            color="textPrimary"
           >
             L&apos; Agenzia Parva Domus è un agenzia ormai radicata nel territorio in grado di garantire, ai propri clienti, siano essi venditori che acquirenti, un altissimo grado di eccellenza nei servizi.
           </Typography>
-          <Button
-            href="#contact-us"
-            variant="contained"
-            sx={{ 
-              textTransform: "none"
-            }}
-          >
-            Contattaci
-          </Button>
+          <Box>
+            <Button
+              href="#contact-us"
+              variant="contained"
+              size="large"
+              startIcon={<PhoneRounded/>}
+              sx={{ 
+                textTransform: "none"
+              }}
+            >
+              Contattaci
+            </Button>
+          </Box>
         </Stack>
       </Section>
       <Video 
@@ -77,7 +90,7 @@ export function HeroSection(props: BaseSectionProps) {
         autoPlay
         muted
         sx={{
-          height: { xs: '80%', md: '100%'},
+          height: '100%',
           width: '100%',
           position: 'absolute',
           objectFit: 'cover'
