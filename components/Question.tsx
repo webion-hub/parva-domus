@@ -25,7 +25,10 @@ export function Question(props: QuestionProps) {
         </Typography>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography color="text.secondary">
+        <Typography 
+          color="text.secondary"
+          component="span"  
+        >
           {props.description}
         </Typography>
       </AccordionDetails>

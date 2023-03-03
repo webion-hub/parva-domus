@@ -1,6 +1,6 @@
 import { BaseSectionProps, Section } from "@/components/Section";
 import PhoneRounded from "@mui/icons-material/PhoneRounded";
-import { Box, Button, Paper, Stack, styled, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { alpha, Box, Button, Paper, Stack, styled, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 const Video = styled('video')({})
 
@@ -23,10 +23,7 @@ export function HeroSection(props: BaseSectionProps) {
           width: '100%',
           height: '100%',
           position: 'absolute',
-          background: {
-            xs: 'linear-gradient(0deg, rgba(255,255,255,0.6) 0%, rgba(198,201,223,0.55) 50%, rgba(66,74,148,0.5) 100%)',
-            sm: 'linear-gradient(90deg, rgba(255,255,255,0.6) 0%, rgba(198,201,223,0.55) 50%, rgba(66,74,148,0.5) 100%)'
-          },
+          background: theme => alpha(theme.palette.primary.main, 0.5),
           zIndex: 1,
         }
       }}
@@ -56,7 +53,7 @@ export function HeroSection(props: BaseSectionProps) {
           <Typography
             variant={isSmall ? "h4" : "h3"}
             component="h1"
-            color="textPrimary"
+            color="white"
           >
             <b>
               Immobiliare Parva
@@ -65,9 +62,9 @@ export function HeroSection(props: BaseSectionProps) {
             </b>
           </Typography>
           <Typography
-            color="textPrimary"
+            color="white"
           >
-            L&apos; Agenzia Parva Domus è un&apos;agenzia ormai radicata nel territorio in grado di garantire, ai propri clienti, siano essi venditori che acquirenti, un altissimo grado di eccellenza nei servizi.
+            Parva Domus è uno studio di consulenza immobiliare radicato nel territorio in grado di garantire, ai propri clienti, sia venditori che acquirenti, sia locatori che conduttori, un&apos;assistenza eccellente a livello totale..
           </Typography>
           <Box>
             <Button

@@ -41,13 +41,19 @@ export function WhoWeAreSection(props: BaseSectionProps) {
           />
         </Paper>
         <Typography color="text.secondary">
-          Il nostro studio è composto da un team di professionisti specializzati in Locazioni (immobili residenziali), Affitti (immobili commerciali), Aste, Fallimenti, Saldi e Stralci.
+          Il nostro studio è composto da un team di professionisti specializzati in Locazioni brevi/a lungo termine(immobili residenziali), Affitti (immobili commerciali), Aste, Fallimenti, Saldi e Stralci.
           <br/>
           <br/>
-          Verifichiamo con diversi controlli, la solvibilità dei nostri inquilini garantendo ai proprietari una locazione in piena sicurezza, grazie anche a prodotti assicurativi mirati per le locazioni. 
+          Verifichiamo con diversi controlli, la solvibilità dei nostri inquilini garantendo ai proprietari una locazione in piena sicurezza, grazie anche a prodotti assicurativi mirati alle locazioni. Questi vanno a tutelare il locatore, sia per eventuali danni subiti, sia per il mancato pagamento del canone fino a dodici mesi.
           <br/>
           <br/>
-          Ci occupiamo della gestione burocratica del contratto di affitto e delle operazioni ad esso connesse (dalle pulizie alla manutenzione ordinaria e straordinaria dell&apos;appartamento), sollevando il locatore da ogni pensiero.Collaboriamo direttamente con le principali aziende presenti sul territorio cittadino e limitrofo (Gruppo ENI, SAIPEM, SKY, Gruppo ospedaliero San Donato e BMW Italia) fornendo alloggi aziendali per i propri dipendenti e collaboratori esterni, anche per brevi periodi.
+          Ci occupiamo della gestione burocratica del contratto di locazione e delle operazioni ad esso connesse (dalle pulizie alla manutenzione ordinaria e straordinaria dell&apos;appartamento), sollevando il locatore da ogni pensiero.
+          <br/>
+          <br/>
+          Collaboriamo direttamente con le principali aziende presenti sul territorio cittadino e limitrofo (Gruppo ENI, SAIPEM, SKY, Gruppo ospedaliero San Donato e BMW Italia) fornendo alloggi aziendali per i propri dipendenti e collaboratori esterni, anche per brevi periodi.
+          <br/>
+          <br/>
+          Inoltre, abbiamo una rete di appartamenti/affitta camere ideali per corpo docente, con locazione di pochi mesi.
         </Typography>
       </Stack>
     </Section>

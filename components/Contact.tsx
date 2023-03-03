@@ -10,7 +10,7 @@ export function Contact(props: ContactProps) {
   return (
     <Stack 
       direction="column"
-      justifyContent="space-between"
+      spacing={2}
     >
       <Typography>
         {props.label}

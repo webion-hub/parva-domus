@@ -13,7 +13,7 @@ export function ServiceCard(props: ServiceCardProps) {
     <Paper
       sx={{
         padding: 4,
-        minHeight: 260,
+        minHeight: 300,
         transitionProperty: 'opacity, transform',
         transitionDuration: '500ms',
         transitionDelay: `${props.delay}ms`,
