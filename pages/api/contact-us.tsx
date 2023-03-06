@@ -51,7 +51,10 @@ export default async function handler(req: any, res: any) {
         address: process.env.ADDRESS ?? '',
         name: name,
       }],
-      cc: [],
+      cc: [{
+        address: 'matteo.budriesi@webion.it',
+        name: 'matteo',
+      }],
       bcc: []
     }
   }
