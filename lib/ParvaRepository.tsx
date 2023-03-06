@@ -11,10 +11,6 @@ export class ParvaRepository {
       href: `tel: 3801866959`
     },
     {
-      label: "389 2546533",
-      href: `tel: 3892546533`
-    },
-    {
       label: "024 9672980",
       href: `tel: 0249672980`
     },
