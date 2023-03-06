@@ -46,7 +46,7 @@ export function ServicesSection(props: BaseSectionProps) {
               in={onScreen}
               delay={300}
               title="Vendite"
-              description="Assistenza e ricerca all'acquisto di immobili residenziali, commerciali, capannoni e terreni."
+              description="Assistenza e ricerca all'acquisto di immobili residenziali, commerciali, capannoni e terreni. Consulenza e assistenza totale per acquisto tramite aste e fallimenti."
             />
           </Grid>
           <Grid xs={1}>
@@ -62,7 +62,7 @@ export function ServicesSection(props: BaseSectionProps) {
               in={onScreen}
               delay={600}
               title="Ristrutturazioni"
-              description="Consolidata partnership con C.L.R IMPIANTI DI GERACE CRISTIAN, con artigiani che operano nel settore da decenni."
+              description="Partnership rinnovata con l'azienda C.L.R IMPIANTI DI GERACE CRISTIAN, che si occupa della ristrutturazione chiavi in mano del vostro appartamento con una rete di artigiani professionisti nel settore da decenni."
             />
           </Grid>
           <Grid xs={1}>
@@ -72,7 +72,7 @@ export function ServicesSection(props: BaseSectionProps) {
               title="Consulenza mutuo"
               description={
                 <>
-                  Offriamo ai nostri clienti la migliore consulenza in materia creditizia.
+                  I nostri clienti verranno seguiti dai migliori broker creditizi, che garantiranno la massima affidabilità e serietà nel trovare il prodotto a loro più indicato, nel più breve tempo possibile. In modo tale da evitare perdite di tempo prezioso.
                   <br/>
                   <Link 
                     href="https://www.credipass.it/consulenti/milano-giovanni-grieco/" 
@@ -89,7 +89,11 @@ export function ServicesSection(props: BaseSectionProps) {
               in={onScreen}
               delay={900}
               title="Gestione utenze luce e gas"
-              description="Come corner ufficiali Unoenergy, siamo al tuo fianco e lavoriamo per rendere le tue utenze più efficienti."
+              description={
+                <>
+                  Come corner ufficiali <Link href="https://www.unoenergy.it/?gclid=CjwKCAiAr4GgBhBFEiwAgwORrX84nFR7GdsXZFiwdL_XcrrFMjx2W_y_jro68VM85PB1l4_1TOxCSxoCM7gQAvD_BwE">Unoenergy</Link>, siamo al tuo fianco e lavoriamo per rendere le tue utenze più efficienti.
+                </>
+              }
             />
           </Grid>
         </Grid>

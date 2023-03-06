@@ -32,7 +32,7 @@ export const lightTheme = responsiveFontSizes(createTheme({
     },
     text: {
       primary: '#000B2C',
-      secondary: '#989EA7'
+      secondary: '#000'
     }
   },
   layoutMaxWidth: {

@@ -15,7 +15,7 @@ export function SectionTitle(props: SectionTitleProps) {
   return (
     <Typography
       variant="h4" 
-      color="text.primary"
+      color="primary"
       {...others}
       sx={{
         marginBottom: { xs: 4, md: 8},

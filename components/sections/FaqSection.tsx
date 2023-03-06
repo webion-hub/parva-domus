@@ -25,7 +25,7 @@ export function FaqSection(props: BaseSectionProps) {
           }}
         >
           <NextImg
-            src="/assets/images/faq.png"
+            src="/assets/images/faq.jpg"
             alt="faq"
             fill
             sizes="
@@ -51,6 +51,11 @@ export function FaqSection(props: BaseSectionProps) {
           >
             <Question 
               defaultExpanded
+              title="Quanto vale il mio immobile al metro quadro?"
+              description="
+              Potete richiedere una valutazione della proprietà da parte dei nostri agenti immobiliari, che nella loro stima terranno conto di tutte le caratteristiche e delle particolarità dell'immobile. A tal fine, basta contattarci online. I servizi, sono gratuiti e senza impegno per voi."
+            />
+            <Question 
               title="Quali spese, tasse e oneri si pagano quando si vende o si acquista un immobile?"
               description={<>
                 L’acquirente deve sostenere:
@@ -72,7 +77,7 @@ export function FaqSection(props: BaseSectionProps) {
             />
             <Question
               title="Quanto vale il mio immobile al metro quadro?"
-              description="Potete richiedere una valutazione della proprietà da parte dei nostri agenti immobiliari, che nella loro stima terranno conto di tutte le caratteristiche e delle particolarità dell'immobile. A tal fine, basta contattarci online. Noi vi risponderemo celermente a breve proponendovi una data. I servizi, sono gratuiti e senza impegno per voi."
+              description="Potete richiedere una valutazione della proprietà da parte dei nostri agenti immobiliari, che nella loro stima terranno conto di tutte le caratteristiche e delle particolarità dell'immobile. A tal fine, basta contattarci online. I servizi, sono gratuiti e senza impegno per voi."
             />
           </Stack>
         </Stack>

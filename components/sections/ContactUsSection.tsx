@@ -3,10 +3,11 @@ import { contactUsApi } from "@/pages/_app";
 import FacebookRounded from "@mui/icons-material/FacebookRounded";
 import Instagram from "@mui/icons-material/Instagram";
 import LoadingButton from '@mui/lab/LoadingButton';
-import { Alert, Checkbox, FormControlLabel, IconButton, Link, Paper, Snackbar, Stack, TextField, Typography } from "@mui/material";
+import { Alert, Checkbox, Divider, FormControlLabel, IconButton, Link, Paper, Snackbar, Stack, TextField, Typography } from "@mui/material";
 import { ChangeEvent, useState } from "react";
 import { ParvaRepository } from "../../lib/ParvaRepository";
 import { Contact } from "../Contact";
+import { ContactGroup } from "../ContactGroup";
 import { BaseSectionProps, Section } from "../Section";
 import { SectionTitle } from "../SectionTitle";
 
@@ -110,22 +111,22 @@ export function ContactUsSection(props: BaseSectionProps) {
             direction={{ xs: "column", md: "row"}}
             spacing={3}
             sx={{ marginBottom: 4 }}  
+            divider={<Divider orientation="vertical" flexItem />}
           >
+            <ContactGroup
+              label="Telefono"
+              contacts={ParvaRepository.phone}
+            />
             <Contact
               label="Email"
               href={`mailto: ${ParvaRepository.email}`}
               contact={ParvaRepository.email}
             />
-            <Contact
-              label="Telefono"
-              href={`tel: ${ParvaRepository.phone}`}
-              contact={ParvaRepository.phone}
-            />
             <Stack
               direction="column"
               spacing={1}
             >
-              <Typography sx={{ marginLeft: 1 }}>
+              <Typography>
                 Social
               </Typography>
               <Stack
