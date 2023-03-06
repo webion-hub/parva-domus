@@ -27,7 +27,7 @@ export function WhoWeAreSection(props: BaseSectionProps) {
           }}
         >
           <NextImg
-            src="/assets/images/who-we-are.png"
+            src="/assets/images/who-we-are.jpg"
             alt="who-we-are"
             fill
             sizes="

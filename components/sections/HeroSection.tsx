@@ -93,7 +93,6 @@ export function HeroSection(props: BaseSectionProps) {
           objectFit: 'cover'
         }}
       >
-        <source src="./assets/videos/home.webm" type="video/webm"/>
         <source src="./assets/videos/home.mp4" type="video/mp4"/>
         Your browser does not support the video tag.
       </Video>
