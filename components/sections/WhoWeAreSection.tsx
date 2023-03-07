@@ -41,7 +41,7 @@ export function WhoWeAreSection(props: BaseSectionProps) {
           />
         </Paper>
         <Typography color="text.secondary">
-          Il nostro studio è composto da un team di professionisti specializzati in Locazioni brevi/a lungo termine(immobili residenziali), Affitti (immobili commerciali), Aste, Fallimenti, Saldi e Stralci.
+          Il nostro studio è composto da un team di professionisti specializzati in Locazioni brevi/a lungo termine(immobili residenziali), Affitti (immobili commerciali), Aste, Fallimenti e Saldi e Stralci.
           <br/>
           <br/>
           Verifichiamo con diversi controlli, la solvibilità dei nostri inquilini garantendo ai proprietari una locazione in piena sicurezza, grazie anche a prodotti assicurativi mirati alle locazioni. Questi vanno a tutelare il locatore, sia per eventuali danni subiti, sia per il mancato pagamento del canone fino a dodici mesi.

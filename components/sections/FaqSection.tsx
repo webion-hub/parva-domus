@@ -61,23 +61,22 @@ export function FaqSection(props: BaseSectionProps) {
                 L’acquirente deve sostenere:
                 <ul>
                   <li>Le spese notarili;</li>
-                  <li>La tassazione prima o seconda casa, che viene calcolata sulla rendita catastale, se si parla di immobile residenziale;</li> 
-                  <li>Il venditore deve sostenere la redazione della Relazione Tecnica integrata; eventuali sanatorie, nel caso risultino abusi all’interno dell’immobile;</li>
-                  <li>La predisposizione dell’Attestato di Prestazione Energetica</li>
+                  <li>La tassazione prima o seconda casa che viene calcolata sulla rendita catastale;</li> 
+                </ul>
+                Il venditore deve sostenere 
+                <ul>
+                  <li>La redazione della Relazione Tecnica integrata; eventuali sanatorie, nel caso risultino abusi all’interno dell’immobile;</li>
+                  <li>La predisposizione dell&apos;Attestato di Prestazione Energetica.</li> 
                 </ul>
               </>}
             />
             <Question 
               title="Posso richiedere un mutuo per acquistare un immobile all'asta?"
-              description="Certamente, i 120 giorni successivi all'aggiudicazione, ci permetteranno di assistere il cliente per tutte le pratiche e le richieste dell'ente creditizio."
+              description="Certamente, nei 120 giorni successivi all'aggiudicazione, il cliente verrà assistito dai nostri consulenti finanziari, fino alla delibera del mutuo."
             />
             <Question 
               title="Quali garanzie ha il proprietario che concede in locazione un immobile?"
               description="Prima di consegnare le chiavi dell’alloggio, il proprietario di casa richiede generalmente la consegna di una somma di denaro, il deposito cauzione, che potrà essere usata per coprire eventuali danni causati dall’inquilino. La cauzione viene affidata in deposito e matura degli interessi, che spettano di diritto agli inquilini."
-            />
-            <Question
-              title="Quanto vale il mio immobile al metro quadro?"
-              description="Potete richiedere una valutazione della proprietà da parte dei nostri agenti immobiliari, che nella loro stima terranno conto di tutte le caratteristiche e delle particolarità dell'immobile. A tal fine, basta contattarci online. I servizi, sono gratuiti e senza impegno per voi."
             />
           </Stack>
         </Stack>

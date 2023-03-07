@@ -64,7 +64,7 @@ export function HeroSection(props: BaseSectionProps) {
           <Typography
             color="white"
           >
-            Parva Domus è uno studio di consulenza immobiliare radicato nel territorio in grado di garantire, ai propri clienti, sia venditori che acquirenti, sia locatori che conduttori, un&apos;assistenza eccellente a livello totale..
+            Parva Domus è uno studio di consulenza immobiliare radicato nel territorio milanese in grado di garantire, ai propri clienti, siano essi venditori che acquirenti, sia locatori che conduttori, un&apos;assistenza eccellente a livello totale.
           </Typography>
           <Box>
             <Button
