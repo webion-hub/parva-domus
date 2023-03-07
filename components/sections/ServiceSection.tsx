@@ -38,7 +38,7 @@ export function ServicesSection(props: BaseSectionProps) {
               in={onScreen}
               delay={150}
               title="Affitti"
-              description="Gestione locazioni. Ci occupiamo della gestione burocratica pre-contrattuale (Controlli documentazione clienti e loro solvibilità) e pratiche post-contrattuali (rinnovi e chiusure contrattuali)."
+              description="Gestione locazioni. Ci occupiamo della gestione burocratica pre-contrattuale (Controlli documentazione clienti e loro solvibilità) e pratiche post-contrattuali (rinnovi e chiusure)."
             />
           </Grid>
           <Grid xs={1}>
@@ -54,7 +54,7 @@ export function ServicesSection(props: BaseSectionProps) {
               in={onScreen}
               delay={450}
               title="Gestione affitti brevi"
-              description="Tipologia di locazioni molto richiesta soprattutto in zone di interesse quali, poli lavorativi o il Centro Ospedaliero San Donato."
+              description="Tipologia di locazioni in punti strategici nelle vicinanze delle sedi di ENI, SAIPEM, SKY, Gruppo Ospedaliero San Donato, BMW Italia, CERVED e UNIPOL Assicurazioni."
             />
           </Grid>
           <Grid xs={1}>
@@ -72,7 +72,7 @@ export function ServicesSection(props: BaseSectionProps) {
               title="Consulenza mutuo"
               description={
                 <>
-                  I nostri clienti verranno seguiti dai migliori broker creditizi, che garantiranno la massima affidabilità e serietà nel trovare il prodotto a loro più indicato, nel più breve tempo possibile. In modo tale da evitare perdite di tempo prezioso.
+                  I nostri clienti verranno seguiti dai migliori broker creditizi, che garantiranno la massima affidabilità e serietà nel trovare il prodotto a loro più indicato, nel più breve tempo possibile.
                   <br/>
                   <Link 
                     href="https://www.credipass.it/consulenti/milano-giovanni-grieco/" 
