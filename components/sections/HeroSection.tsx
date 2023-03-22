@@ -23,7 +23,6 @@ export function HeroSection(props: BaseSectionProps) {
           width: '100%',
           height: '100%',
           position: 'absolute',
-          background: theme => alpha(theme.palette.primary.main, 0.5),
           zIndex: 1,
         }
       }}
