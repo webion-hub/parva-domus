@@ -54,7 +54,7 @@ export function ServicesSection(props: BaseSectionProps) {
               in={onScreen}
               delay={450}
               title="Gestione affitti brevi"
-              description="Tipologia di locazioni in punti strategici nelle vicinanze delle sedi di ENI, SAIPEM, SKY, Gruppo Ospedaliero San Donato, BMW Italia, CERVED e UNIPOL Assicurazioni."
+              description="Inoltre abbiamo la possibilità di affitti a breve termine grazie ad un'ampia rete di appartamenti e affitta camere ideali ad insegnanti, studenti o trasfertisti anche solo per pochi giorni."
             />
           </Grid>
           <Grid xs={1}>
@@ -92,6 +92,8 @@ export function ServicesSection(props: BaseSectionProps) {
               description={
                 <>
                   Come corner ufficiali <Link href="https://www.unoenergy.it/?gclid=CjwKCAiAr4GgBhBFEiwAgwORrX84nFR7GdsXZFiwdL_XcrrFMjx2W_y_jro68VM85PB1l4_1TOxCSxoCM7gQAvD_BwE">Unoenergy</Link>, siamo al tuo fianco e lavoriamo per rendere le tue utenze più efficienti.
+                  <br/>
+                  Ci occuperemo noi di tutte le volture.
                 </>
               }
             />
