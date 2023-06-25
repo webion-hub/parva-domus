@@ -18,5 +18,6 @@ export class ParvaRepository {
 
   static addressLink = "https://goo.gl/maps/a72dpQTM2RSDm8no9"
   static facebookLink = "https://www.facebook.com/Parvadomusconsulenzeegestioneimmobili"
-  static instagramLink = "https://www.instagram.com/parvadomus_sandonatomilanese/?igshid=ZDdkNTZiNTM%3D"
+  static instagramLink = "https://www.instagram.com/parvadomus_sdm"
+  static twitterLink = "https://www.twitter.com/parvadomus_sdm"
 }

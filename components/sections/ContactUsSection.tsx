@@ -10,6 +10,7 @@ import { Contact } from "../Contact";
 import { ContactGroup } from "../ContactGroup";
 import { BaseSectionProps, Section } from "../Section";
 import { SectionTitle } from "../SectionTitle";
+import { Twitter } from "@mui/icons-material";
 
 interface ValueStatus<T> {
   readonly value: T,
@@ -144,6 +145,13 @@ export function ContactUsSection(props: BaseSectionProps) {
                   href={ParvaRepository.instagramLink}
                 >
                   <Instagram/>
+                </IconButton>
+
+                <IconButton
+                  target="_blank"
+                  href={ParvaRepository.twitterLink}
+                >
+                  <Twitter />
                 </IconButton>
               </Stack>
             </Stack>
