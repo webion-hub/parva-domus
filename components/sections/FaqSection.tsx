@@ -25,7 +25,7 @@ export function FaqSection(props: BaseSectionProps) {
           }}
         >
           <NextImg
-            src="/assets/images/faq.jpeg"
+            src="/assets/images/faq.png"
             alt="faq"
             fill
             sizes="
